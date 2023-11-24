@@ -11,7 +11,7 @@ import com.teste.estudo.model.Produto;
 import com.teste.estudo.repository.ProdutoRepository;
 
 @Service
-public class ProdutoServices {
+public class ProdutoService {
     @Autowired
     private ProdutoRepository produtoRepository;
     
