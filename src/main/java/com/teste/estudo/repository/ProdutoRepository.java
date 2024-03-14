@@ -7,13 +7,15 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 import com.teste.estudo.model.Produto;
+import com.teste.estudo.model.exception.ResourceNotFoundException;
 
 @Repository
 public class ProdutoRepository {
     
+    //Simulando o banco de dados
     private List <Produto> produtos = new ArrayList<Produto>();
     private Integer ultimoId = 0;
-
+    
     /**
      * Metodo para retorna uma lista de produtos
      * @return lista de produtos
@@ -63,7 +65,7 @@ public class ProdutoRepository {
         Optional<Produto> produtoEncontrado = obterPorId(produto.getId()); 
         
         if(produtoEncontrado.isEmpty()){
-            throw new InputMismatchException("Produto não encontrado");
+            throw new ResourceNotFoundException("Produto não encontrado");
         }
         
         //Remover o produto antigo da lista.

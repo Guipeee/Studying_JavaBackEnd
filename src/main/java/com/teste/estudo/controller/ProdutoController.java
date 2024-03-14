@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.service.annotation.DeleteExchange;
-import org.springframework.web.service.annotation.PutExchange;
 
 import com.teste.estudo.model.Produto;
 import com.teste.estudo.services.ProdutoService;
