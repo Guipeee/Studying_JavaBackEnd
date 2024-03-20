@@ -1,11 +1,16 @@
 package com.teste.estudo.model;
 
+import jakarta.annotation.Generated;
+import javax.persistence.id;
+
 public class Produto {
     
     //Integer -> Números menores
     //Long -> Números maiores
 
     //#region Atributos
+    /*@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)*/
     private Integer id;
 
     private String nome;
