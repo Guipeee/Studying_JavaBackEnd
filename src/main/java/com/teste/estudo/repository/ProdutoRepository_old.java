@@ -9,7 +9,7 @@ import com.teste.estudo.model.Produto;
 import com.teste.estudo.model.exception.ResourceNotFoundException;
 
 @Repository
-public class ProdutoRepository_old{
+public class ProdutoRepository_old {
     
     //Simulando o banco de dados
     private List <Produto> produtos = new ArrayList<Produto>();
