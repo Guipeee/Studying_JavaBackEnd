@@ -7,12 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.teste.estudo.model.Produto;
-import com.teste.estudo.repository.ProdutoRepository_old;
+import com.teste.estudo.repository.ProdutoRepository;
 
 @Service
 public class ProdutoService {
     @Autowired
-    private ProdutoRepository_old produtoRepository;
+    private ProdutoRepository produtoRepository;
     
     /**
      * Metodo para retornar uma lista de produtos
@@ -20,7 +20,8 @@ public class ProdutoService {
      */
     public List<Produto> obterTodos(){
         //Colocar regra aqui caso tenha.
-        return produtoRepository.obterTodos();
+        //return produtoRepository_old.obterTodos();
+        return produtoRepository.findAll();
     }
 
     /**
@@ -29,7 +30,9 @@ public class ProdutoService {
      * @return Retorna um produto caso seja encontrado.
      */
     public Optional <Produto> obterPorId(Integer id){
-        return produtoRepository.obterPorId(id);
+        //return produtoRepository_old.obterPorId(id);
+        return produtoRepository.findById(id);
+
     }
 
     /**
@@ -39,7 +42,8 @@ public class ProdutoService {
      */
     public Produto adicionar(Produto produto){
         //Poderia ter alguma regra de negócio aqui para validar o produto.
-        return produtoRepository.adicionar(produto);
+        //return produtoRepository_old.adicionar(produto);
+        return produtoRepository.save(produto);
     }
 
     /**
@@ -48,7 +52,13 @@ public class ProdutoService {
      */
     public void deletar(Integer id){
         //Aqui poderia ter alguma lógica de validação.
-        produtoRepository.deletar(id);
+        //produtoRepository_old.deletar(id);
+        produtoRepository.deleteById(id);
+    }
+
+
+    public void deletarAll(){
+        produtoRepository.deleteAll();
     }
 
     /**
@@ -60,7 +70,7 @@ public class ProdutoService {
         
         //Poderia ter alguma validação no ID
         produto.setId(id);
-        
-        return produtoRepository.atualizar(produto);
+        return produtoRepository.saveAndFlush(produto);
+        //return produtoRepository_old.atualizar(produto);
     }
 }

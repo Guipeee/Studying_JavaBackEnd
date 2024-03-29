@@ -71,4 +71,11 @@ public class Produto {
     }
     //#endregion
 
+    @Override
+
+	public String toString() {
+		return "Produto [id=" + id + ", nome=" + nome + ", quant=" 
+        + quantidade + ", valor=" + valor + "obs="+ observacao + "]";
+	}
+
 }
