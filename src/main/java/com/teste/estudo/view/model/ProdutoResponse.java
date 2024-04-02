@@ -1,19 +1,10 @@
-package com.teste.estudo.model;
+package com.teste.estudo.view.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity
-public class Produto {
-    
+public class ProdutoResponse {
     //Integer -> Números menores
     //Long -> Números maiores
 
     //#region Atributos
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private String nome;
@@ -22,7 +13,7 @@ public class Produto {
 
     private Double valor;
 
-    private String observacao;
+    // private String observacao;
 
     //Separando as variaveis com 1 linha de espaço, a geração de getters and setters fica automática 
     //a partir do caminho: botão direito, ação de origem, generate getters and setters.
@@ -61,7 +52,7 @@ public class Produto {
     public void setValor(Double valor) {
         this.valor = valor;
     }
-
+/*
     public String getObservacao() {
         return observacao;
     }
@@ -69,12 +60,6 @@ public class Produto {
     public void setObservacao(String observacao) {
         this.observacao = observacao;
     }
+*/
     //#endregion
-
-    @Override
-	public String toString() {
-		return "Produto [id=" + id + ", nome=" + nome + ", quant=" 
-        + quantidade + ", valor=" + valor + "obs="+ observacao + "]";
-	}
-
 }

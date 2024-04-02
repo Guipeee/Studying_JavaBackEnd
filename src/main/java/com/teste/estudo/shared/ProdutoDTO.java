@@ -1,19 +1,10 @@
-package com.teste.estudo.model;
+package com.teste.estudo.shared;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity
-public class Produto {
-    
+public class ProdutoDTO {
     //Integer -> Números menores
     //Long -> Números maiores
 
     //#region Atributos
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private String nome;
